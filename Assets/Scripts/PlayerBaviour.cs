@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerBaviour : MonoBehaviour
 {
+    [SerializeField] float rotationSpeed = -5;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +14,10 @@ public class PlayerBaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+        {
+            transform.Rotate(0, 0, rotationSpeed * Input.GetAxisRaw("Horizontal") * Time.deltaTime);
+        }
         
     }
 }

@@ -13,7 +13,7 @@ public class Button : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.anyKey)
+        if (Input.anyKeyDown)
         {
             Debug.Log("Someone pressed a button");
         }

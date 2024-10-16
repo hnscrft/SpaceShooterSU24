@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PlayerBaviour : MonoBehaviour
 {
@@ -13,6 +15,7 @@ public class PlayerBaviour : MonoBehaviour
     bool isBoosting = false;
 
     private Rigidbody2D rb;
+    Score score;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +40,13 @@ public class PlayerBaviour : MonoBehaviour
             {
                 boostTime += 1 * Time.deltaTime;
             }
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Enemy")
+        {
+            score.score += 100; 
         }
     }
 }

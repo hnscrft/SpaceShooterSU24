@@ -10,12 +10,13 @@ public class PlayerBaviour : MonoBehaviour
 
     [SerializeField] float maxBoostTime = 50f;
     [SerializeField] float boostMultiplier = 2;
+    float playerHealth = 100f;
     float boostTime = 0f;
 
     bool isBoosting = false;
 
     private Rigidbody2D rb;
-    Score score;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,17 +37,11 @@ public class PlayerBaviour : MonoBehaviour
         else
         {
             rb.AddForce(new Vector2(moveForce * Time.deltaTime * Input.GetAxisRaw("Horizontal"), moveForce * Time.deltaTime * Input.GetAxisRaw("Vertical"))); //Moves player
-            if(boostTime < maxBoostTime )
+            isBoosting = true;
+            if (boostTime < maxBoostTime)
             {
                 boostTime += 1 * Time.deltaTime;
             }
-        }
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "Enemy")
-        {
-            score.score += 100; 
         }
     }
 }

@@ -7,19 +7,22 @@ public class MissileBehaviour : MonoBehaviour
 {
     private Rigidbody2D rb;
 
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        rb.AddForce(new Vector2(0, -30));
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-    }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
 
     }
+    void OnBecameInvisible()
+    {
+        Destroy(gameObject);
+        Debug.Log("Missile missed");
+   }
 }

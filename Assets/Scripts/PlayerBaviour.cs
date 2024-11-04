@@ -10,10 +10,9 @@ public class PlayerBaviour : MonoBehaviour
 
     [SerializeField] float maxBoostTime = 50f;
     [SerializeField] float boostMultiplier = 2;
-    float playerHealth = 100f;
     float boostTime = 0f;
 
-    bool isBoosting = false;
+//    bool isBoosting = false;
 
     private Rigidbody2D rb;
 
@@ -31,13 +30,13 @@ public class PlayerBaviour : MonoBehaviour
         {
             rb.AddForce(new Vector2(moveForce * boostMultiplier * Time.deltaTime * Input.GetAxisRaw("Horizontal"), moveForce * boostMultiplier * Time.deltaTime * Input.GetAxisRaw("Vertical")));
             boostTime -= 1 * Time.deltaTime;
-            isBoosting = true;
+//            isBoosting = true;
         }
 
         else
         {
             rb.AddForce(new Vector2(moveForce * Time.deltaTime * Input.GetAxisRaw("Horizontal"), moveForce * Time.deltaTime * Input.GetAxisRaw("Vertical"))); //Moves player
-            isBoosting = true;
+//            isBoosting = true;
             if (boostTime < maxBoostTime)
             {
                 boostTime += 1 * Time.deltaTime;

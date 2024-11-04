@@ -6,6 +6,7 @@ using UnityEngine;
 public class MissileBehaviour : MonoBehaviour
 {
     private Rigidbody2D rb;
+    bool hasColided;
 
 
     // Start is called before the first frame update
@@ -22,7 +23,8 @@ public class MissileBehaviour : MonoBehaviour
     }
     void OnBecameInvisible()
     {
+
         Destroy(gameObject);
         Debug.Log("Missile missed");
-   }
+    }
 }

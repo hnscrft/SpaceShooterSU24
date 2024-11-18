@@ -43,4 +43,8 @@ public class PlayerBaviour : MonoBehaviour
             }
         }
     }
+    private void OnBecameInvisible()
+    {
+        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(0, 0, 0);
+    }
 }

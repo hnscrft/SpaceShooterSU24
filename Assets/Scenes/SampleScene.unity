@@ -199,21 +199,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -1088511042924887010, guid: db6c568f7f8f25648a3b6113db0e50c6, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 6200000, guid: 9d420706a9bd1074bb8137cbb78cce56, type: 2}
-    - target: {fileID: -1088511042924887010, guid: db6c568f7f8f25648a3b6113db0e50c6, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4289782340018695559, guid: db6c568f7f8f25648a3b6113db0e50c6, type: 3}
       propertyPath: m_Name
       value: Enemy Missile
       objectReference: {fileID: 0}
     - target: {fileID: 9074846883463428095, guid: db6c568f7f8f25648a3b6113db0e50c6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -30
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 9074846883463428095, guid: db6c568f7f8f25648a3b6113db0e50c6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -258,9 +250,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4289782340018695559, guid: db6c568f7f8f25648a3b6113db0e50c6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 316590478}
-    - targetCorrespondingSourceObject: {fileID: 4289782340018695559, guid: db6c568f7f8f25648a3b6113db0e50c6, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 316590482}
   m_SourcePrefab: {fileID: 100100000, guid: db6c568f7f8f25648a3b6113db0e50c6, type: 3}
 --- !u!1 &316590474 stripped
 GameObject:
@@ -283,7 +272,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 9d420706a9bd1074bb8137cbb78cce56, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -294,18 +283,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &316590482
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 316590474}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ceea3a6add490142ad9b0dce1b57cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -679,7 +656,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 1971720386}
-  planetHealth: 100
+  planetHealth: 10
 --- !u!114 &1926670660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -693,7 +670,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   missilePrefab: {fileID: 4289782340018695559, guid: db6c568f7f8f25648a3b6113db0e50c6, type: 3}
-  spawnTime: 5
+  spawnTime: 2
+  maxEnemies: 6
 --- !u!1 &1971720384
 GameObject:
   m_ObjectHideFlags: 0

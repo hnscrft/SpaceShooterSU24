@@ -18,6 +18,11 @@ public class Planet : MonoBehaviour
     void Update()
     {
         text.text = $"Planet health: {planetHealth}";
+        if(planetHealth <= 0)
+        {
+            print("Quit game");
+            Application.Quit();
+        }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
